@@ -7,12 +7,20 @@ while True:
         while True:
             try:
                 name = input("Please enter a name: ")
-                age = int(input("Please enter an age"))
+                age = int(input("Please enter an age: "))
+                
+                retry = input("Would you want to try again? (Yes/No) ")
+                if retry != "Yes" or retry != "yes" or retry != "y":
+                    raise
 
-                retry = input("Would you want to try again? ")
-
-                #Stops the nested loop
                 break
-            
+
             except: 
-                print("Invalid input")
+                print("Invalid input, please try again")
+
+        if retry == "No" or retry == "no" or retry == "n":
+            break
+        
+
+        #if you answer no on the retry question, it will stop the loop altogether   
+        
